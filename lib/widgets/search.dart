@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 Widget searchBar(TextEditingController searchController) {
   return Container(
     decoration: BoxDecoration(
-        color: Color(0xfff5f8fd), borderRadius: BorderRadius.circular(30)),
+      color: Colors.white.withOpacity(0.20),
+      borderRadius: BorderRadius.circular(30),
+    ),
     padding: EdgeInsets.symmetric(horizontal: 24),
     margin: EdgeInsets.symmetric(horizontal: 24),
     child: Row(
@@ -12,7 +14,12 @@ Widget searchBar(TextEditingController searchController) {
           child: TextField(
             controller: searchController,
             decoration: InputDecoration(
-                hintText: "search game", border: InputBorder.none),
+                hintText: "Search game",
+                hintStyle: TextStyle(
+                  color: Colors.white70.withOpacity(.5),
+                ),
+                border: InputBorder.none,
+                hoverColor: Colors.pinkAccent),
           ),
         ),
         InkWell(
@@ -24,7 +31,12 @@ Widget searchBar(TextEditingController searchController) {
             //               searchQuery: searchController.text,
             //             )));
           },
-          child: Container(child: Icon(Icons.search)),
+          child: Container(
+            child: Icon(
+              Icons.search,
+              color: Colors.pinkAccent,
+            ),
+          ),
         ),
       ],
     ),
