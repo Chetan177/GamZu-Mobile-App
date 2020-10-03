@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Game Zoo',
         theme: ThemeData(
-          primaryColor: Colors.white,
+          primaryColor: Color(0xFF212121),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Home());
