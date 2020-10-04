@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 // model for all game data
 class GameModel {
@@ -8,7 +7,7 @@ class GameModel {
   int metaCritic;
   String backgroundImg;
   String website;
-  Double rating;
+  String rating;
   String redditURL;
 
   GameModel({
@@ -30,7 +29,7 @@ class GameModel {
       metaCritic: jsonData["metacritic"],
       backgroundImg: jsonData["background_image"],
       website: jsonData["website"],
-      rating: jsonData["rating"],
+      rating: jsonData["rating"].toString(),
       redditURL: jsonData["reddit_url"],
     );
   }
