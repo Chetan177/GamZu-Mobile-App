@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+<br />
+<p align="center">
+  <a href="https://github.com/Chetan177/guzbee/">
+    <img src="assets/screen.svg" alt="Logo" width="40%" height="40%">
+  </a>
+</p>
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
