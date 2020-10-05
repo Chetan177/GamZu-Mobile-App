@@ -6,6 +6,7 @@ import 'package:GameZooApp/widgets/appbar.dart';
 import 'package:GameZooApp/widgets/extra.dart';
 import 'package:GameZooApp/widgets/games.dart';
 import 'package:GameZooApp/widgets/genres.dart';
+import 'package:GameZooApp/widgets/navbar.dart';
 import 'package:GameZooApp/widgets/search.dart';
 import "package:flutter/material.dart";
 import 'package:http/http.dart' as http;
@@ -81,6 +82,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
