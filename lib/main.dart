@@ -1,3 +1,4 @@
+import 'package:GameZooApp/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:GameZooApp/views/home.dart';
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF212121),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Home());
+        home: SplashScreen()
+        // Home()
+    );
   }
 }
