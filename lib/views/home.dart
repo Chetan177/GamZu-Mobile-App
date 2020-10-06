@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:GameZooApp/model/colors.dart';
 import 'package:GameZooApp/model/game.dart';
 import 'package:GameZooApp/model/genre.dart';
 import 'package:GameZooApp/widgets/appbar.dart';
@@ -62,9 +63,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF212121),
+      backgroundColor: Primary,
       appBar: AppBar(
-        backgroundColor: Color(0xFF212121),
+        backgroundColor: Primary,
         centerTitle: true,
         title: brandName(),
         elevation: 0.0,
