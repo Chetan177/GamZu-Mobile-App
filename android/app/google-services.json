@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "903093328230",
+    "firebase_url": "https://guzbee-82b9b.firebaseio.com",
+    "project_id": "guzbee-82b9b",
+    "storage_bucket": "guzbee-82b9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903093328230:android:337c962d988db677e710a7",
+        "android_client_info": {
+          "package_name": "com.gamzu.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903093328230-va2lgd9rdvecqeq4vt2ec54r1fs09dis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gamzu.app",
+            "certificate_hash": "3bbdd2c0644798bfcbb263e36a8b906a05763ee2"
+          }
+        },
+        {
+          "client_id": "903093328230-9gpuqg7v31h58c409prn21ebfp3vd3cl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPJsnyIQvJD16g2tpQ6r5e2M7XDP8Q3XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903093328230-9gpuqg7v31h58c409prn21ebfp3vd3cl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
