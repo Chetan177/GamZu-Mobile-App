@@ -1,4 +1,4 @@
-package com.gamzoo.app
+package com.gamzu.app
 
 import io.flutter.embedding.android.FlutterActivity
 
