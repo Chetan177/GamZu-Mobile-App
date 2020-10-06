@@ -2,6 +2,8 @@ import 'package:GameZooApp/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:GameZooApp/views/home.dart';
 
+import 'model/colors.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Game Zoo',
         theme: ThemeData(
-          primaryColor: Color(0xFF212121),
+          primaryColor: Primary,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: SplashScreen()

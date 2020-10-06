@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:GameZooApp/model/colors.dart';
 import 'package:GameZooApp/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: Color(0xFF212121),
+              color: Primary,
             ),
           ),
           Column(

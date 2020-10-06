@@ -1,3 +1,4 @@
+import 'package:GameZooApp/model/colors.dart';
 import "package:flutter/material.dart";
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -13,8 +14,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Color(0xFF212121), boxShadow: [
-        BoxShadow(blurRadius: 20, color: Color(0xFF212121).withOpacity(.1))
+      decoration: BoxDecoration(color: Primary, boxShadow: [
+        BoxShadow(blurRadius: 20, color: Primary.withOpacity(.1))
       ]),
       child: SafeArea(
         child: Padding(
