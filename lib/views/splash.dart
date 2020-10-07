@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         curve: Curves.ease,
         type: PageTransitionType.fade,
         duration: Duration(seconds: 2),
-        child: Login(),
+        child: Home(),
       ));
     } );
   }

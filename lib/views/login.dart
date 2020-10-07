@@ -53,7 +53,7 @@ class _LoginState extends State<Login> {
                         color: Colors.white70, fontSize: 24),
                   ),
                 ),
-                onPressed: signInWithGoogle,
+                onPressed: _handleSignIn,
                 color: Secondary,
               ),
             ],
@@ -62,14 +62,26 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+  Future<FirebaseUser> _handleSignIn() async {
+    GoogleSignInAccount googleUser = await googleSignIn.signIn();
+    GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    final FirebaseUser user = (await firebaseAuth.signInWithCredential(credential)).user;
+    print("signed in " + user.displayName);
+    return user;
+  }
+  _signInWithGoogle() async {
+    final GoogleSignInAccount googleUser = await googleSignIn.signIn();
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+        idToken: googleAuth.idToken, accessToken: googleAuth.accessToken);
+
+    final FirebaseUser user = (await firebaseAuth.signInWithCredential(credential)).user;
+  }
 }
 
-signInWithGoogle() async {
-  final GoogleSignInAccount googleUser = await googleSignIn.signIn();
-  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
-  final AuthCredential credential = GoogleAuthProvider.getCredential(
-      idToken: googleAuth.idToken, accessToken: googleAuth.accessToken);
-
-  final FirebaseUser user = (await firebaseAuth.signInWithCredential(credential)).user;
-}
