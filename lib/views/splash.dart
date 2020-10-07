@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:GameZooApp/model/colors.dart';
 import 'package:GameZooApp/views/home.dart';
+import 'package:GameZooApp/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         curve: Curves.ease,
         type: PageTransitionType.fade,
         duration: Duration(seconds: 2),
-        child: Home(),
+        child: Login(),
       ));
     } );
   }
