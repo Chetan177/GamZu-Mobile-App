@@ -1,20 +1,11 @@
-import 'dart:convert';
-
 import 'package:GameZooApp/model/colors.dart';
-import 'package:GameZooApp/model/game.dart';
-import 'package:GameZooApp/model/genre.dart';
 import 'package:GameZooApp/views/favourite.dart';
 import 'package:GameZooApp/views/mainview.dart';
 import 'package:GameZooApp/views/profile.dart';
 import 'package:GameZooApp/views/search.dart';
 import 'package:GameZooApp/widgets/appbar.dart';
-import 'package:GameZooApp/widgets/extra.dart';
-import 'package:GameZooApp/widgets/games.dart';
-import 'package:GameZooApp/widgets/genres.dart';
 import 'package:GameZooApp/widgets/navbar.dart';
-import 'package:GameZooApp/widgets/search.dart';
 import "package:flutter/material.dart";
-
 
 class Home extends StatefulWidget {
   @override
@@ -32,7 +23,6 @@ class _HomeState extends State<Home> {
     Search(),
     Profile(),
   ];
-
 
   @override
   void initState() {
