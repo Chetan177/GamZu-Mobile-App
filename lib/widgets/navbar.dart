@@ -1,14 +1,25 @@
 import 'package:GameZooApp/model/colors.dart';
+import 'package:GameZooApp/views/favourite.dart';
+import 'package:GameZooApp/views/home.dart';
+import 'package:GameZooApp/views/profile.dart';
+import 'package:GameZooApp/views/search.dart';
 import "package:flutter/material.dart";
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:page_transition/page_transition.dart';
 
 class BottomNavBar extends StatefulWidget {
+
+  final ValueChanged<int> onChange;
+
+  BottomNavBar(this.onChange);
+
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  int counter = 0;
   int _selectedIndex = 0;
 
   @override
@@ -53,6 +64,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
               onTabChange: (index) {
                 setState(() {
                   _selectedIndex = index;
+                  counter = index;
+                  widget.onChange(counter);
                 });
               }),
         ),
