@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:GameZooApp/model/game.dart';
 import 'package:GameZooApp/model/genre.dart';
+import 'package:GameZooApp/views/search.dart';
 import 'package:GameZooApp/widgets/extra.dart';
 import 'package:GameZooApp/widgets/games.dart';
 import 'package:GameZooApp/widgets/search.dart';
@@ -48,7 +49,7 @@ class _MainViewState extends State<MainView> {
 
   @override
   void setState(fn) {
-    if(mounted) {
+    if (mounted) {
       super.setState(fn);
     }
   }
@@ -60,8 +61,7 @@ class _MainViewState extends State<MainView> {
     getGenre();
     // Get games on init
     getPopularGames();
-    }
-
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class _MainViewState extends State<MainView> {
       child: Container(
         child: Column(
           children: <Widget>[
-            searchBar(searchController),
+            searchBar(searchController, context),
             getSpacing(), // genreList(genres: genres, context: context),
             gameList(games: games, context: context),
           ],
