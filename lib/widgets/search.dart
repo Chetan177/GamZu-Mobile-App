@@ -2,9 +2,7 @@ import 'package:GameZooApp/views/search.dart';
 import 'package:flutter/material.dart';
 
 Widget searchBar(TextEditingController searchController, context) {
-  return Material(
-    color: Colors.transparent,
-    child: Container(
+  return Container(
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.20),
         borderRadius: BorderRadius.circular(30),
@@ -44,6 +42,6 @@ Widget searchBar(TextEditingController searchController, context) {
           ),
         ],
       ),
-    ),
+
   );
 }
