@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:GameZooApp/widgets/appbar.dart';
 import 'package:GameZooApp/widgets/extra.dart';
 import 'package:GameZooApp/widgets/games.dart';
 import 'package:GameZooApp/widgets/search.dart';
@@ -33,7 +34,7 @@ class _SearchState extends State<Search> {
       gameModel = GameModel.fromMap(element);
       games.add(gameModel);
     });
-
+    print(games[0].backgroundImg);
     // create new screen
     setState(() {});
   }
@@ -47,22 +48,32 @@ class _SearchState extends State<Search> {
 
   @override
   void initState() {
+    super.initState();
+
     getSearchGames(widget.searchQuery);
     searchController.text = widget.searchQuery;
-    super.initState();
+
   }
 
   // TODO fix search
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            searchBar(searchController, context),
-            getSpacing(),
-            gameList(games: games, context: context),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Primary,
+        centerTitle: true,
+        title: brandName(),
+        elevation: 0.0,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              searchBar(searchController, context),
+              getSpacing(),
+              gameList(games: games, context: context),
+            ],
+          ),
         ),
       ),
     );
