@@ -49,8 +49,11 @@ class _HomeState extends State<Home> {
     jsonData["results"].forEach((element) {
       GameModel gameModel = new GameModel();
       gameModel = GameModel.fromMap(element);
-      games.add(gameModel);
+      if(gameModel.backgroundImg != null){
+        games.add(gameModel);
+      }
     });
+
 
     // create new screen
     setState(() {});
