@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:GameZooApp/widgets/appbar.dart';
 import 'package:GameZooApp/widgets/extra.dart';
 import 'package:GameZooApp/widgets/games.dart';
 import 'package:GameZooApp/widgets/search.dart';
@@ -18,11 +19,13 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   // Game List
-  List<GameModel> games = new List();
+  List<GameModel> searchGames = new List();
 
   TextEditingController searchController = new TextEditingController();
 
   getSearchGames(String query) async {
+    print(query);
+    searchGames.clear();
     var response = await http
         .get("https://api.rawg.io/api/games?page_size=20&search=$query");
 
@@ -31,7 +34,9 @@ class _SearchState extends State<Search> {
     jsonData["results"].forEach((element) {
       GameModel gameModel = new GameModel();
       gameModel = GameModel.fromMap(element);
-      games.add(gameModel);
+      if(gameModel.backgroundImg != null){
+        searchGames.add(gameModel);
+      }
     });
 
     // create new screen
@@ -39,30 +44,70 @@ class _SearchState extends State<Search> {
   }
 
   @override
-  void setState(fn) {
-    if (mounted) {
-      super.setState(fn);
-    }
-  }
-
-  @override
   void initState() {
+
     getSearchGames(widget.searchQuery);
-    searchController.text = widget.searchQuery;
     super.initState();
+    searchController.text = widget.searchQuery;
   }
 
   // TODO fix search
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            searchBar(searchController, context),
-            getSpacing(),
-            gameList(games: games, context: context),
-          ],
+    return Scaffold(
+      backgroundColor: Primary,
+      appBar: AppBar(
+        backgroundColor: Primary,
+        centerTitle: true,
+        title: brandName(),
+        elevation: 0.0,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.20),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                margin: EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: TextField(
+                        controller: searchController,
+                        decoration: InputDecoration(
+                            hintText: "Search game",
+                            hintStyle: TextStyle(
+                              color: Colors.white70.withOpacity(.5),
+                            ),
+                            border: InputBorder.none,
+                            hoverColor: Colors.pinkAccent),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        getSearchGames(searchController.text);
+                      },
+
+                        child: Container(
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.pinkAccent,
+                          ),
+                        )
+                    ),
+                  ],
+                ),
+
+              ),
+              getSpacing(),
+              gameList(games: searchGames, context: context),
+            ],
+          ),
         ),
       ),
     );
