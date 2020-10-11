@@ -44,11 +44,19 @@ class _SearchState extends State<Search> {
   }
 
   @override
+  void setState(fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
+  @override
   void initState() {
 
     getSearchGames(widget.searchQuery);
     super.initState();
     searchController.text = widget.searchQuery;
+    super.initState();
   }
 
   // TODO fix search
